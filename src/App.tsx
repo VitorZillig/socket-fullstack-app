@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, ClassAttributes } from 'react'
+import { useEffect, useRef, useState, RefObject } from 'react'
 import reactLogo from './assets/react.svg'
 import './App.css'
 import axios from 'axios'
@@ -12,7 +12,7 @@ function App() {
 
   const [data, setData] = useState({})
 
-  const inputRef = useRef<InputRefProps>(null)
+  const inputRef = useRef<HTMLInputElement>(null)
 
   const getFood = async(value:string | undefined)=>{
     const response = await axios.post("https://trackapi.nutritionix.com/v2/natural/nutrients", {
